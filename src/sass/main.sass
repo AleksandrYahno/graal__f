@@ -192,7 +192,7 @@ body
   margin: 0 auto
 
 
-//TODO menu-mobile
+// menu-mobile
 .menu-mobile
   width: 100vw
   height: 100vh
@@ -247,7 +247,7 @@ body
 
 
 
-//TODO pop-up
+// pop-up
 .pop-up
   width: 100vw
   height: 100vh
@@ -299,7 +299,7 @@ body
 
 
 
-//TODO section
+// section
 .section-title
   font-style: normal
   font-weight: 300
@@ -312,7 +312,6 @@ body
 
 .section-main
   height: calc(100vh - 160px - 96px)
-  //background: url("../img/main_bg.png")
   background: url("../img/main_bg_02.png")
   background-size: cover
   background-repeat: no-repeat
@@ -534,8 +533,6 @@ body
     letter-spacing: 0.03em
 
 
-
-
 .section-hou
   height: calc(100vh - 96px)
   .main-wrapper
@@ -574,26 +571,113 @@ body
 
 
 .section-gallery
-  border: 1px solid $colorYellow
-  min-height: 100vh
+  min-height: 90vh
+  position: relative
+  margin-bottom: 20px
   .section-title
     margin: 45px 0 45px 144px
 .gallery
-  border: 1px dotted grey
+  min-height: 70vh
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: space-around
   &__teaser
-    border: 1px dotted grey
+    height: 100%
+    &__wrapper
+      width: 100%
+      height: 100%
+      .teaser-coll
+        width: 980px
+        margin: 0 auto
+        display: flex
+        position: relative
+        &__left
+          width: 49%
+          img
+            width: 100%
+
+        &__right
+          width: 49%
+          display: flex
+          flex-wrap: wrap
+          margin-top: 48px
+
+          &__box
+            width: 240px
+            height: 240px
+            img
+              width: 100%
+            &--background
+              background: $colorYellow
+              display: flex
+              align-items: center
+              justify-content: center
+              img
+                max-width: 161px
+                height: auto
+
 
   &__all
-    border: 1px dotted darkslategrey
+    height: 0
+    overflow: hidden
+    transition: height 1s ease-in-out
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    &__img-box
+      width: 24%
+      position: relative
+      margin: 5px auto
+      display: flex
+      flex-direction: column
+      align-items: center
+      cursor: pointer
+      min-height: 400px
+      justify-content: space-between
+      .img-box
+        width: 100%
+        height: 100%
+        display: flex
+        align-items: center
+        //transition: all .1s linear
+      .img-box--pop
+        z-index: 9
+        transform: scale(1.4)
+        //transition: all .25s ease-in-out
+      .img-box--popPage
+        position: fixed
+        width: 70vw
+        height: 70vh
+        display: flex
+        align-items: center
+        justify-content: center
+        top: 15%
+        left: 15%
+        z-index: 99999
+        //transition: all .1s linear
+        .gall-img
+          width: auto
+          height: 80%
+      .gall-img
+        width: 100%
+        height: auto
+        //transition: all .25s ease-in-out
+    &--show
+      //height: 400px
+      overflow: inherit
+      height: 100%
+      transition: height 1s ease-in-out
 
   &__button
-    border: 1px dotted grey
     display: flex
     align-items: center
     justify-content: center
+
+
 .button-show
   background: $colorWhite
-  border: 1px dotted grey
+  border: none
   display: flex
   flex-direction: column
   align-items: center
@@ -615,6 +699,13 @@ body
       bottom: -20px
       border: 10px solid transparent
       border-top: 10px solid $colorYellow
+
+  &--rotate
+    .button-show__element
+      &:after
+        transform: rotate(-180deg)
+        bottom: -10px
+
 
 .section-footer
   height: 100vh
@@ -664,7 +755,7 @@ body
     margin-left: 57px
 
 
-//TODO all button in .header
+// all button in .header
 .callback__button
   background: $colorWhite
   border: none

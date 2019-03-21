@@ -826,19 +826,164 @@ body {
     letter-spacing: 0.03em; }
 
 .section-gallery {
-  border: 1px solid #FFB800;
-  min-height: 100vh; }
+  min-height: 90vh;
+  position: relative;
+  margin-bottom: 20px; }
   .section-gallery .section-title {
     margin: 45px 0 45px 144px; }
 
 .gallery {
-  border: 1px dotted grey; }
+  min-height: 70vh;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
   .gallery__teaser {
-    border: 1px dotted grey; }
+    height: 100%; }
+    .gallery__teaser__wrapper {
+      width: 100%;
+      height: 100%; }
+      .gallery__teaser__wrapper .teaser-coll {
+        width: 980px;
+        margin: 0 auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative; }
+        .gallery__teaser__wrapper .teaser-coll__left {
+          width: 49%; }
+          .gallery__teaser__wrapper .teaser-coll__left img {
+            width: 100%; }
+        .gallery__teaser__wrapper .teaser-coll__right {
+          width: 49%;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-flex-wrap: wrap;
+              -ms-flex-wrap: wrap;
+                  flex-wrap: wrap;
+          margin-top: 48px; }
+          .gallery__teaser__wrapper .teaser-coll__right__box {
+            width: 240px;
+            height: 240px; }
+            .gallery__teaser__wrapper .teaser-coll__right__box img {
+              width: 100%; }
+            .gallery__teaser__wrapper .teaser-coll__right__box--background {
+              background: #FFB800;
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -webkit-align-items: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              -webkit-box-pack: center;
+              -webkit-justify-content: center;
+                  -ms-flex-pack: center;
+                      justify-content: center; }
+              .gallery__teaser__wrapper .teaser-coll__right__box--background img {
+                max-width: 161px;
+                height: auto; }
   .gallery__all {
-    border: 1px dotted darkslategrey; }
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 1s ease-in-out;
+    -o-transition: height 1s ease-in-out;
+    transition: height 1s ease-in-out;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .gallery__all__img-box {
+      width: 24%;
+      position: relative;
+      margin: 5px auto;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      cursor: pointer;
+      min-height: 400px;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .gallery__all__img-box .img-box {
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center; }
+      .gallery__all__img-box .img-box--pop {
+        z-index: 9;
+        -webkit-transform: scale(1.4);
+            -ms-transform: scale(1.4);
+                transform: scale(1.4); }
+      .gallery__all__img-box .img-box--popPage {
+        position: fixed;
+        width: 70vw;
+        height: 70vh;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        top: 15%;
+        left: 15%;
+        z-index: 99999; }
+        .gallery__all__img-box .img-box--popPage .gall-img {
+          width: auto;
+          height: 80%; }
+      .gallery__all__img-box .gall-img {
+        width: 100%;
+        height: auto; }
+    .gallery__all--show {
+      overflow: inherit;
+      height: 100%;
+      -webkit-transition: height 1s ease-in-out;
+      -o-transition: height 1s ease-in-out;
+      transition: height 1s ease-in-out; }
   .gallery__button {
-    border: 1px dotted grey;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -854,7 +999,7 @@ body {
 
 .button-show {
   background: #FFFFFF;
-  border: 1px dotted grey;
+  border: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -886,6 +1031,11 @@ body {
       bottom: -20px;
       border: 10px solid transparent;
       border-top: 10px solid #FFB800; }
+  .button-show--rotate .button-show__element:after {
+    -webkit-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+    bottom: -10px; }
 
 .section-footer {
   height: 100vh; }

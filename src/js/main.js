@@ -34,7 +34,9 @@ window.onload = function () {
         cbb = document.getElementById("callbackButton"),
         cbb2 = document.getElementById("callbackButton2"),
         cbb3 = document.getElementById("callbackButton3"),
-        cbbS = document.getElementById("callbackButtonS");
+        cbbS = document.getElementById("callbackButtonS"),
+        btnShow = document.getElementById("btnShow"),
+        galleryAll = document.getElementsByClassName("gallery__all")[0];
 
     function showPopUp() {
         popup.classList.add("pop-up--show");
@@ -56,6 +58,11 @@ window.onload = function () {
         enableScrolling();
     }
 
+    function galleryShow() {
+        btnShow.classList.toggle("button-show--rotate");
+        galleryAll.classList.toggle("gallery__all--show");
+    }
+
     cbb.onclick = function () {
         showPopUp();
     };
@@ -74,6 +81,10 @@ window.onload = function () {
     cbbSH.onclick = function () {
         hidePopUpS();
     };
+    btnShow.onclick = function () {
+        galleryShow();
+    };
+
 
     //mobile menu
     let mobMenu = document.getElementById("menuMobile"),
@@ -88,5 +99,27 @@ window.onload = function () {
         mobMenu.classList.remove("menu-mobile--show");
         enableScrolling();
     };
+
+
+    //gallery
+    let imgBox = document.getElementsByClassName("img-box");
+    for (let i = 0; i < imgBox.length; i++) {
+
+        imgBox[i].onmouseover = imgBox[i].onmouseout = handler;
+        function handler() {
+            imgBox[i].classList.toggle("img-box--pop");
+        }
+
+        imgBox[i].onclick = function () {
+            imgBox[i].classList.toggle("img-box--popPage");
+            imgBox[i].onmouseover = imgBox[i].onmouseout = false;
+            if(imgBox[i].classList === "img-box--popPage") {
+                imgBox[i].onmouseover = imgBox[i].onmouseout = false;
+            } else {
+                imgBox[i].onmouseover = imgBox[i].onmouseout = handler;
+            }
+        };
+
+    }
 
 };
